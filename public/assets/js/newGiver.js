@@ -7,7 +7,6 @@ $(document).ready(function () {
     const firstName = $("#firstName").val();
     const lastName = $("#lastName").val();
     console.log(email);
-    console.log(password);
     console.log(firstName);
     console.log(lastName);
 
