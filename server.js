@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.static("public"));
 
-const PORT = process.env.PORT||8080;
+const PORT = process.env.PORT || 8080;
 // Configure express-handlebars
 app.engine(
   "handlebars",
