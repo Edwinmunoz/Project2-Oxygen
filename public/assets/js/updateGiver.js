@@ -1,9 +1,9 @@
 $(document).ready(function () {
-  $("#edit-giver").on("submit", function (e) {
+  $("#giverSubmitButton").on("submit", function (e) {
     e.preventDefault();
     const id = $(this).data("id");
-    const email = $("#email").val();
-    const giverFullName = $("#giverFullName").val();
+    const email = $("#giverEmailInput").val();
+    const giverFullName = $("#giverNameInput").val();
 
     $.ajax({
       method: "PUT",
