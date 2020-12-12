@@ -6,6 +6,9 @@ $(document).ready(function () {
         const email = $("#email").val();
         const firstName = $("#firstName").val();
         const lastName = $("#lastName").val();
+        const gift1 = $("#gift1").val();
+        const gift2 = $("#gift2").val();
+        const gift3 = $("#gift3").val();
         console.log(email);
         console.log(firstName);
         console.log(lastName);
@@ -17,6 +20,9 @@ $(document).ready(function () {
                 email,
                 firstName,
                 lastName,
+                gift1,
+                gift2,
+                gift3
             },
         }).then((response) => {
             window.location.replace("/recievers");
