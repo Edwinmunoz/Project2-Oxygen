@@ -1,62 +1,55 @@
-<nav class="red">
-    <div class="nav-wrapper" id="navbar">
-        <a href="#" class="brand-logo" id="logo">HJ</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
-</nav>
-
-<div class="container" id="recieverInput">
+<div class="container" id="recieverPage">
     <div class="row">
-        <div class="col s6" id="inputForm">
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input placeholder="Placeholder" id="first_name" type="text" class="validate" />
-                            <label for="first_name">Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="giverAddress" type="text" class="validate" />
-                            <label for="giverAddress">Adress</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="input" type="text" class="GiftOne" />
-                            <label>Gift 1</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="input" type="text" class="GiftOne" />
-                            <label>Gift 2</label>
-                        </div>
-                    </div>
-                    <div class="input-field col s12">
-                        <input id="input" type="text" class="GiftOne" />
-                        <label>Gift 3</label>
-                    </div>
-                </form>
-            </div>
-            <a class="waves-effect waves-light btn-large" id="submitButton">Submit</a>
-        </div>
         <div class="col s6">
-            <div class="row" id="inputBackground">
-                <div class="col s12 m6">
-                    <div class="card green darken-1">
-                        <div class="card-content white-text" id="inputReceiver">
-                            <span class="card-title">Name Here</span>
-                            <p>Address</p>
-                            <p>Gift 1 example</p>
-                            <p>Gift 2 example</p>
-                            <p>Gift 3 example</p>
+            <div class="row">
+                <div class="container" id="receiverForm">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="Full Name" id="receiverName" type="text" class="validate" />
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="receiverAddress" type="text" class="validate" />
+                                <label for="giverAddress">Adress</label>
+                            </div>
                         </div>
-                        <div class="card-action" id="inputReceiver">
-                            <a href="#">Delete</a>
-                            <a href="#">Update</a>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="receiverGiftOne" type="text" class="GiftOne" />
+                                <label>Gift 1</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="receiverGiftTwo" type="text" class="GiftOne" />
+                                <label>Gift 2</label>
+                            </div>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="receiverGiftThree" type="text" class="GiftOne" />
+                            <label>Gift 3</label>
+                        </div>
+                        <a class="waves-effect waves-light btn-large" id="receiverSubmitButton">Submit</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="recieverData">
+            <div class="col s6">
+                <div class="row" id="inputBackground">
+                    <div class="col s12">
+                        <div class="card green darken-1">
+                            <div class="card-content white-text" id="receiverDataForm">
+                                <span class="card-title" id="dataName">Name Here</span>
+                                <p id="dataAddress">Address</p>
+                                <p id="dataGiftOne">Gift 1 example</p>
+                                <p id="dataGiftTwo">Gift 2 example</p>
+                                <p id="dataGiftThree">Gift 3 example</p>
+                            </div>
+                            <div class="card-action" id="inputReceiver">
+                                <a class="waves-effect waves-teal btn-flat" id="receiverUpdateButton">Update</a>
+                                <a class="waves-effect waves-teal btn-flat" id="receiverDeleteButton">Delete</a>
+                            </div>
                         </div>
                     </div>
                 </div>
