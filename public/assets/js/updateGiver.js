@@ -3,17 +3,17 @@ $(document).ready(function () {
     e.preventDefault();
     const id = $(this).data("id");
     const email = $("#email").val();
-    const giverName = $("#giverName").val();
+    const giverFullName = $("#giverFullName").val();
 
     $.ajax({
       method: "PUT",
       url: `/api/givers/${id}`,
       data: {
         email,
-        giverName
+        giverFullName
       },
     }).then((response) => {
-      window.location.replace("/givers");
+      window.location.replace("/giver");
     });
   });
 });
