@@ -3,16 +3,14 @@ $(document).ready(function () {
     e.preventDefault();
     const id = $(this).data("id");
     const email = $("#email").val();
-    const firstName = $("#firstName").val();
-    const lastName = $("#lastName").val();
+    const giverName = $("#giverName").val();
 
     $.ajax({
       method: "PUT",
       url: `/api/givers/${id}`,
       data: {
         email,
-        firstName,
-        lastName,
+        giverName
       },
     }).then((response) => {
       window.location.replace("/givers");

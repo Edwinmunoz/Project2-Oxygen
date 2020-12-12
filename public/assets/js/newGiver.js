@@ -4,19 +4,15 @@ $(document).ready(function () {
   $("#new-giver").on("submit", function (e) {
     e.preventDefault();
     const email = $("#email").val();
-    const firstName = $("#firstName").val();
-    const lastName = $("#lastName").val();
-    console.log(email);
-    console.log(firstName);
-    console.log(lastName);
-
+    const giverName = $("#giverName").val();
+     
     $.ajax({
       method: "POST",
       url: "/api/givers",
       data: {
         email,
-        firstName,
-        lastName,
+        giverName
+        
       },
     }).then((response) => {
       window.location.replace("/givers");

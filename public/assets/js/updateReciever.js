@@ -3,18 +3,19 @@ $(document).ready(function () {
         e.preventDefault();
         const id = $(this).data("id");
         const email = $("#email").val();
-        const firstName = $("#firstName").val();
-        const lastName = $("#lastName").val();
+        const recieverName = $("#recieverName").val();
+        const address = $("#address").val();
         const gift1 = $("#gift1").val();
         const gift2 = $("#gift2").val();
         const gift3 = $("#gift3").val();
+        
         $.ajax({
             method: "PUT",
             url: `/api/recievers/${id}`,
             data: {
                 email,
-                firstName,
-                lastName,
+                recieverName,
+                address,
                 gift1,
                 gift2,
                 gift3
