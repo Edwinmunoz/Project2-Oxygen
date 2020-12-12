@@ -1,0 +1,27 @@
+#background {
+  background-image: url("./images/christmas1.jpg");
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+#logo {
+  font-family: "Elsie Swash Caps", cursive;
+  margin-left: 15px;
+}
+
+#Giver {
+  text-align: center;
+}
+
+#Receiver {
+  text-align: center;
+}
+
+#hollyJolly {
+  font-family: "Elsie Swash Caps", cursive;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 5%;
+}
