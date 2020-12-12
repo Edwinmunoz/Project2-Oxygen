@@ -33,4 +33,13 @@ module.exports = function (app) {
         });
     });
 
+    // PUT route for updating gifts
+    app.put("/gifts_list/:id", function (req, res) {   
+        console.log(req.body)       
+        db.giftsList.update(req.body, { where: { id: req.params.id }})
+        .then(function (dbGift) {
+            res.json(dbGift);
+        })
+    });
+
 }
