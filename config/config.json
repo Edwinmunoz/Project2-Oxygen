@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "catfish1",
+    "password": "",
     "database": "giving_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
