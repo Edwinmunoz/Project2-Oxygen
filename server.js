@@ -9,6 +9,7 @@ const app = express();
 
 app.use(express.static("public"));
 
+const PORT = process.env.PORT || 8080;
 // Configure express-handlebars
 app.engine(
   "handlebars",
@@ -24,10 +25,10 @@ app.set("view engine", "handlebars");
 
 // Views Routes
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("home");
 });
 
-app.use(receiverController);
+// app.use(receiverController);
 
 // API Routes
 app.get("/api/config", (req, res) => {
