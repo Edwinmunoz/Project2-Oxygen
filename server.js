@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const exphbs = require("express-handlebars");
 const handlebars = require("handlebars");
@@ -10,15 +11,21 @@ const app = express();
 app.use(express.static("public"));
 
 const PORT = process.env.PORT || 8080;
-// Configure express-handlebars
+
 app.engine(
-  "handlebars",
+  ".hbs",
   exphbs({
     defaultLayout: "main",
-    handlebars: allowInsecurePrototypeAccess(handlebars),
+    extname: ".hbs",
+    layoutsDir: path.join(__dirname, "views/layouts"),
   })
 );
-app.set("view engine", "handlebars");
+
+app.engine("hbs", exphbs());
+app.set("view engine", ".hbs");
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "hbs");
+app.set("views", "views");
 app.set("view engine", "handlebars");
 
 // ROUTES
