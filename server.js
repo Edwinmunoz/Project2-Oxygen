@@ -1,11 +1,12 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const handlebars = require("handlebars");
+const db = require("./models");
+const app = express();
+
 const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
-const db = require("./models");
-const app = express();
 
 app.use(express.static("public"));
 
@@ -24,9 +25,13 @@ app.set("view engine", "handlebars");
 
 // Views Routes
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("home");
 });
 
+// app.use(receiverController);
+const PORT = process.env.PORT || 8181;
+
+const receiverController = require("./controllers/receiverController");
 app.use(receiverController);
 
 // API Routes
