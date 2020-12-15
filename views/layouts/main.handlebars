@@ -8,22 +8,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="./assets/js/stylesheets/style.css" />
+    <link rel="stylesheet" type="type/css" href="/public/assets/js/stylesheets/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/js/stylesheets/style.css" type = "text/css">
 </head>
-<nav class="red">
-    <div class="nav-wrapper" id="navbar">
-        <a href="home.handlebars" class="brand-logo" id="logo">HJ</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="aboutus.handlebars">About Us</a></li>
-            <li><a href="contact.handlebars">Contact</a></li>
-        </ul>
-    </div>
-</nav>
-
 <body>
     {{{body}}}
 </body>
 
 </html>
+<script>
+function contactUs() {
+  window.location.replace("/contactus");
+}
+function aboutUs() {
+  window.location.replace("/aboutus");
+}
+
+function home() {
+  window.location.replace("/");
+}
+</script>
