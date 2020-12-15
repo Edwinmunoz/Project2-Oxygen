@@ -2,8 +2,21 @@
     <div class="nav-wrapper" id="navbar">
         <a href="home.handlebars" class="brand-logo" id="logo">HJ</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="aboutus.handlebars">About Us</a></li>
-            <li><a href="contact.handlebars">Contact</a></li>
+            <li><a href="aboutus.handlebars" id="aboutUs">About Us</a></li>
+            <li><a href="contact.handlebars" id="contact">Contact</a></li>
         </ul>
     </div>
 </nav>
+
+<script>
+    function contactUs() {
+        window.location.replace("/contactus");
+    }
+    function aboutUs() {
+        window.location.replace("/aboutus");
+    }
+
+    function home() {
+        window.location.replace("/");
+    }
+</script>
