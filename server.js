@@ -1,31 +1,22 @@
-const path = require("path");
 const express = require("express");
 const exphbs = require("express-handlebars");
 const handlebars = require("handlebars");
+const db = require("./models");
+const app = express();
 const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
-const db = require("./models");
-const app = express();
 
 app.use(express.static("public"));
-
-const PORT = process.env.PORT || 8080;
-
+// Configure express-handlebars
 app.engine(
-  ".hbs",
+  "handlebars",
   exphbs({
     defaultLayout: "main",
-    extname: ".hbs",
-    layoutsDir: path.join(__dirname, "views/layouts"),
+    handlebars: allowInsecurePrototypeAccess(handlebars),
   })
 );
-
-app.engine("hbs", exphbs());
-app.set("view engine", ".hbs");
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "hbs");
-app.set("views", "views");
+app.set("view engine", "handlebars");
 app.set("view engine", "handlebars");
 
 // ROUTES
@@ -35,8 +26,9 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-// app.use(receiverController);
-
+const PORT = process.env.PORT || 8181;
+const receiverController = require("./controllers/receiverController");
+app.use(receiverController);
 // API Routes
 app.get("/api/config", (req, res) => {
   res.json({
