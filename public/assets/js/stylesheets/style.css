@@ -1,5 +1,5 @@
-#background {
-  background-image: url("/public/assets/js/images/christmas1.jpg");
+body {
+  background-image: url("/assets/js/images/christmas1.jpg");
   position: absolute;
   width: 100%;
   height: 100%;
