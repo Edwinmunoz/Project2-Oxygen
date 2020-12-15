@@ -1,21 +1,27 @@
 $(document).ready(function () {
-    $("#edit-reciever").on("submit", function (e) {
+    $("#receiverUpdateButton").on("submit", function (e) {
         e.preventDefault();
         const id = $(this).data("id");
-        const email = $("#email").val();
-        const firstName = $("#firstName").val();
-        const lastName = $("#lastName").val();
+      
+        const receiverName = $("#receiverName").val();
+        const address = $("#address").val();
+        const gift1 = $("#receiverGiftOne").val();
+        const gift2 = $("receiverGiftTwo").val();
+        const gift3 = $("#receiverGiftThree").val();
 
         $.ajax({
             method: "PUT",
-            url: `/api/recievers/${id}`,
+            url: `/api/receivers/${id}`,
             data: {
-                email,
-                firstName,
-                lastName,
+        
+                receiverName,
+                address,
+                gift1,
+                gift2,
+                gift3
             },
         }).then((response) => {
-            window.location.replace("/recievers");
+            window.location.replace("/receiver");
         });
     });
 });

@@ -1,25 +1,28 @@
 $(document).ready(function () {
-    console.log("My new reciever form will go here.");
+    
 
-    $("#new-reciever").on("submit", function (e) {
+    $("receiverSubmitButton").on("submit", function (e) {
         e.preventDefault();
-        const email = $("#email").val();
-        const firstName = $("#firstName").val();
-        const lastName = $("#lastName").val();
-        console.log(email);
-        console.log(firstName);
-        console.log(lastName);
-
+     
+        const receiverName = $("#receiverName").val();
+        const address = $("#address").val();
+        const gift1 = $("#receiverGiftOne").val();
+        const gift2 = $("receiverGiftTwo").val();
+        const gift3 = $("#receiverGiftThree").val();
+        
         $.ajax({
             method: "POST",
-            url: "/api/recievers",
+            url: "/api/receivers",
             data: {
-                email,
-                firstName,
-                lastName,
+        
+                receiverName,
+                address,
+                gift1,
+                gift2,
+                gift3
             },
         }).then((response) => {
-            window.location.replace("/recievers");
+            window.location.replace("/receivers");
         });
     });
 });

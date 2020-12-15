@@ -1,21 +1,19 @@
 $(document).ready(function () {
-  $("#edit-giver").on("submit", function (e) {
+  $("#giverSubmitButton").on("submit", function (e) {
     e.preventDefault();
     const id = $(this).data("id");
-    const email = $("#email").val();
-    const firstName = $("#firstName").val();
-    const lastName = $("#lastName").val();
+    const email = $("#giverEmailInput").val();
+    const giverFullName = $("#giverNameInput").val();
 
     $.ajax({
       method: "PUT",
       url: `/api/givers/${id}`,
       data: {
         email,
-        firstName,
-        lastName,
+        giverFullName
       },
     }).then((response) => {
-      window.location.replace("/givers");
+      window.location.replace("/giver");
     });
   });
 });
