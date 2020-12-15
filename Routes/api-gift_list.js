@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = function (app) {
     //GET route for getting all of the giftlist data
     app.get("/gift_list/", function (req, res) {
-       db.cardsList.findAll({})
+       db.gift_list.findAll({})
             .then(function (dbgift) {
                  res.json(dbgift);
             });
@@ -11,7 +11,7 @@ module.exports = function (app) {
 
       // POST route for saving a new gift
       app.post("/gift_list", function (req, res) {
-        db.giftsList.create({
+        db.Gifts.create({
             Giver: req.body.Giver,
             Receiver: req.body.Receiver,
             Address: req.body.Address,
@@ -27,7 +27,7 @@ module.exports = function (app) {
 
      // DELETE route for deleting gifts
      app.delete("/gift_list/:id", function (req, res) {
-        db.giftsList.destroy({where: {id: req.params.id}})
+        db.gifts_list.destroy({where: {id: req.params.id}})
         .then(function (dbGift) {
             res.json(dbGift);
         });
