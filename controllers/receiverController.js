@@ -20,16 +20,22 @@ router.get("/aboutus", (req, res) => {
    
    
 // this is when new receiver is submitted then it will retreive data from the body and entered to our database
-   router.post("/api/receiver", (req, res) => {
-     db.Gift.create(req.body)
-       .then((newReceiver) => {
-         console.log(newReceiver);
-         res.json(newReceiver);
-       })
-       .catch((err) => {
-         console.log(err);
-       });
-   });
+ 
+  router.post("/api/receivers", (req, res) => {
+    db.Gift.create(req.body)
+      .then((newReceiver) => {
+        console.log(newReceiver);
+        res.json(newReceiver);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
+  
+
+
+
 
 
    
