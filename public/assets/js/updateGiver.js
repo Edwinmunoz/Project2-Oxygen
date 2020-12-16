@@ -10,7 +10,7 @@ $(document).ready(function () {
       url: `/api/givers/${id}`,
       data: {
         email,
-        giverFullName
+        Giver,
       },
     }).then((response) => {
       window.location.replace("/giver");
