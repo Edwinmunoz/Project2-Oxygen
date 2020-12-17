@@ -30,41 +30,12 @@ $(document).ready(function () {
           Gift3:gift3,
         },
       
-      })
+      }).then((response) => {
+        window.location.reload();
+        
+      });
     });
-  
-  
-  
-  
-  
-    $("#editReceiver").on("onclick", function (e) {
-      e.preventDefault();
-     
-    const email = $("#Email").val();
-    const receiver = $("#Receiver").val();
-    const address = $("#Address").val();
-    const gift1 = $("#Gift1").val();
-    const gift2 = $("#Gift2").val();
-    const gift3 =  $("#Gift3").val();
-    console.log(gift1)
-    alert(gift1)
-   
 
-  
-      $.ajax({
-        method: "PUT",
-        url: `/api/receiver/${id}`,
-        data: { 
-          Email: email,
-          Receiver: receiver,
-          Address: address,
-          Gift1:gift1,
-          Gift2:gift2,
-          Gift3:gift3,
-        },
-      
-      })
-    });
   })
 
 

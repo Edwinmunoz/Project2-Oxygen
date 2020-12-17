@@ -1,5 +1,10 @@
 /* main handlebar css */
 
+html{
+  overflow: auto;
+}
+
+
 body {
   background-image: url("/assets/js/images/christmas1.jpg");
   position: fixed;
@@ -7,6 +12,8 @@ body {
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
+  overflow: auto;
+
 }
 
 /* navbar handlebar css */
@@ -160,4 +167,8 @@ body {
 
 #leftCard {
   margin-left: 5%;
+}
+
+#receiverListTitle{
+  text-align: center;
 }

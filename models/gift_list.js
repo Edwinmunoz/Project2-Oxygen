@@ -7,6 +7,7 @@ module.exports = function (sequelize, DataTypes) {
       Gift1: DataTypes.STRING,
       Gift2: DataTypes.STRING,
       Gift3: DataTypes.STRING,
+
       // TODO: Time range
     }, {
       createdAt: false,
