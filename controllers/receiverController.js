@@ -18,6 +18,7 @@ router.get("/aboutus", (req, res) => {
   res.render("aboutus");
 });
 
+// when Giver is pressed on home page then it will direct to giver.handlebars
 router.get("/giver", (req, res) => {
   res.render("giver");
 });
