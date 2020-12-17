@@ -1,13 +1,24 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const handlebars = require("handlebars");
-const db = require("./models");
-const app = express();
 const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
+const db = require("./models");
+const app = express();
 
+const receiverController = require("./controllers/receiverController");
+
+const PORT = process.env.PORT || 8080;
+
+// MIDDLEWARE
+// Handle POST body
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Static directory to be served
 app.use(express.static("public"));
+
 // Configure express-handlebars
 app.engine(
   "handlebars",
@@ -17,7 +28,6 @@ app.engine(
   })
 );
 app.set("view engine", "handlebars");
-//app.set("view engine", "handlebars");
 
 // ROUTES
 
@@ -26,9 +36,8 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-const PORT = process.env.PORT || 8080;
-const receiverController = require("./controllers/receiverController");
 app.use(receiverController);
+
 // API Routes
 app.get("/api/config", (req, res) => {
   res.json({
@@ -45,3 +54,9 @@ db.sequelize.sync().then(() => {
     console.log(`App is running on http://localhost:${PORT}`);
   });
 });
+
+
+
+
+
+

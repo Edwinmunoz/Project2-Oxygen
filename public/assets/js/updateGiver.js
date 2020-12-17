@@ -1,19 +1,27 @@
 $(document).ready(function () {
-  $("#giverSubmitButton").on("submit", function (e) {
+  $("#editReceiver").on("onlick", function (e) {
     e.preventDefault();
     const id = $(this).data("id");
-    const email = $("#giverEmailInput").val();
-    const giverFullName = $("#giverNameInput").val();
+    const giver = $("#Receiver").val();
+    const address = $("#Address").val();
+    console.log(receiver);
+    console.log(address);
+    alert("Clicked")
+
 
     $.ajax({
       method: "PUT",
-      url: `/api/givers/${id}`,
-      data: {
-        email,
-        giverFullName
+      url: `receiver/${id}`,
+      data: { 
+        Email: email,
+        Giver: giver,
       },
     }).then((response) => {
-      window.location.replace("/giver");
+      window.location.reload();
+      
     });
   });
 });
+
+
+
