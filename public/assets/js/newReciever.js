@@ -20,7 +20,7 @@ $(document).ready(function () {
                 Receiver:receiverName,
             },
         }).then((response) => {
-            window.location.replace("/receivers");
+            window.location.reload();
         });
     });
 });
