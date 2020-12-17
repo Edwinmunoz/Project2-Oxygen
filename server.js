@@ -4,7 +4,7 @@ const handlebars = require("handlebars");
 const db = require("./models");
 const app = express();
 const {
- allowInsecurePrototypeAccess,
+  allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
 
 app.use(express.static("public"));

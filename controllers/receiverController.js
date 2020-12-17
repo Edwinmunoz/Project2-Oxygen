@@ -18,12 +18,14 @@ router.get("/aboutus", (req, res) => {
   res.render("aboutus");
 });
 
-// when Giver is pressed on home page then it will direct to giver.handlebars
-router.get("/giver", (req, res) => {
-  res.render("giver");
-});
-
 // this is when new receiver is submitted then it will retreive data from the body and entered to our database
+// router.get("/api/receivers", function(req, res) {
+//   db.Gift.findAll({
+//     include: [db.Post]
+//   }).then(function(newReceiver) {
+//     res.json(newReceiver);
+//   });
+// });
 
 router.post("/api/receivers", (req, res) => {
   db.Gift.create(req.body)
@@ -35,5 +37,29 @@ router.post("/api/receivers", (req, res) => {
       console.log(err);
     });
 });
+
+router.get("/api/receivers", function (req, res) {});
+
+router.delete("api/receivers/:id", function (req, res) {
+  db.gifts_list
+    .destroy({ where: { id: req.params.id } })
+    .then(function (dbGift) {
+      res.json(dbGift);
+    });
+});
+
+// router.put("api/updateReciever/:id", function (req, res) {
+//   console.log(req.body)
+//   db.giftsList.update(req.body, { where: { id: req.params.id }})
+//   .then(function (updateReciever) {
+//       res.json(updateReciever);
+//   })
+// });
+
+router.get("/giver", (req, res) => {
+  res.render("giver");
+});
+
+// this is when new receiver is submitted then it will retreive data from the body and entered to our database
 
 module.exports = router;
