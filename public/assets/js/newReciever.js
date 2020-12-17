@@ -40,7 +40,6 @@ $(document).ready(function () {
     $("#editReceiver").on("onclick", function (e) {
       e.preventDefault();
      
-<<<<<<< HEAD
     const email = $("#Email").val();
     const receiver = $("#Receiver").val();
     const address = $("#Address").val();
@@ -65,26 +64,15 @@ $(document).ready(function () {
         },
       
       })
-=======
-        const receiverName = $("#receiverName").val();
-        // const address = $("#address").val();
-        // const gift1 = $("#receiverGiftOne").val();
-        // const gift2 = $("receiverGiftTwo").val();
-        // const gift3 = $("#receiverGiftThree").val();
-        console.log(receiverName)
-        alert(receiverName)
-        
-        $.ajax({
-            method: "POST",
-            url: "/api/receivers",
-            data: {
-        
-                Receiver:receiverName,
-            },
-        }).then((response) => {
-            window.location.reload();
-        });
->>>>>>> a9d82344c31c3c1a006de2ea7177a24338cb7273
     });
   })
+
+
+
+  
+
+
+
+
+
     
