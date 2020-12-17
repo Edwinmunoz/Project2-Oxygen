@@ -1,15 +1,28 @@
+/* main handlebar css */
+
 body {
   background-image: url("/assets/js/images/christmas1.jpg");
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: fixed;
   background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }
+
+/* navbar handlebar css */
 
 #logo {
   font-family: "Elsie Swash Caps", cursive;
   margin-left: 15px;
 }
+
+#aboutUs,
+#contact {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+}
+
+/* homepage handlebar css */
 
 #Giver {
   text-align: center;
@@ -19,26 +32,24 @@ body {
   text-align: center;
 }
 
-#hollyJolly {
-  font-family: "Elsie Swash Caps", cursive;
-  font-size: 60px;
-  text-align: center;
-  padding-top: 5%;
+#giverHomeButton,
+#receiverHomeButton {
+  margin-left: 5%;
 }
 
-#giverTable {
-  padding-top: 10%;
-  background-image: url("/public/assets/js/images/christmas1.jpg");
-  position: absolute;
-  width: 100%;
-  height: 100%;
+/* receiver handlebar css */
+
+#background {
+  background-image: url("./images/christmas1.jpg");
+  position: fixed;
   background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }
 
-#listNames {
-  text-align: center;
-  margin-left: 50%;
-  margin-right: 50%;
+#recieverPage {
+  margin-top: 5%;
 }
 
 #recieverInput {
@@ -47,33 +58,27 @@ body {
 
 #receiverDataForm {
   text-align: center;
-}
-
-#recieverPage {
-  padding-top: 10%;
-  background-image: url("/public/assets/js/images/christmas1.jpg");
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-}
-
-#inputBackground {
-  margin-left: 25%;
+  font-family: "Playfair Display", serif;
+  margin-left: auto;
 }
 
 #receiverForm {
-  padding-left: 15%;
+  margin-right: auto;
 }
+
+/* #receiverForm {
+  padding-left: 25%;
+  text-align: center;
+} */
 
 #receiverGiver {
   margin-left: 25%;
   margin-right: 25%;
 }
 
-#receiverSubmitButton {
-  margin-left: 40%;
-  margin-right: 40%;
+#receiverButton {
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 #receiverUpdateButton,
@@ -81,7 +86,78 @@ body {
   color: red;
 }
 
+/* giver handlebar css */
+
+#listNames {
+  text-align: center;
+  margin-left: 50%;
+  margin-right: 50%;
+  font-size: 20px;
+}
+
+#inputBackground {
+  margin-left: 25%;
+}
+
 #giverSubmitButton {
   margin-left: 25%;
   margin-right: 25%;
+}
+
+/* about Us handlebar info */
+
+#aboutUsInfo {
+  margin-top: -5%;
+  background: white;
+  opacity: 0.7;
+  font-family: "Playfair Display", serif;
+  font-size: 15px;
+  color: black;
+}
+
+/* Conact Us handlebar info */
+
+#contactUsInfo {
+  margin-left: 11%;
+  text-align: center;
+}
+
+#hollyJolly,
+#contactUs {
+  font-family: "Elsie Swash Caps", cursive;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 5%;
+}
+
+#contactUs {
+  font-family: "Elsie Swash Caps", cursive;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 5%;
+}
+
+#contactName {
+  background-color: green;
+}
+
+#contactNameCard {
+  font-size: 30px;
+  font-family: "Playfair Display", serif;
+  margin-left: 35%;
+  text-align: center;
+}
+
+#contactJobCard {
+  font-size: 20px;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+}
+
+#rightCard {
+  margin-right: 5%;
+}
+
+#leftCard {
+  margin-left: 5%;
 }
