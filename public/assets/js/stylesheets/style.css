@@ -72,8 +72,14 @@ body {
   margin-left: auto;
 }
 
+#receiverData {
+  margin-bottom: 15%;
+}
+
 #receiverForm {
-  margin-right: auto;
+  margin-right: 30%;
+  margin-left: 30%;
+  margin-top: -10%;
 }
 
 #receiverGiver {

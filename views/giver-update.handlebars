@@ -1,10 +1,14 @@
 {{> navbar}}
 
-<h1 id="giverListTitle"> Update Giver's Information</h1>
-<div class="container" id="recieverPage">
+<div class="container" id="background">
     <div class="row">
-        <div class="col s12">
-            <div class="row">
+        <div class="col s12" id="giverListTitle">
+            <p>Giver's Information</p>
+        </div>
+    </div>
+    <div class="container" id="recieverPage">
+        <div class="row">
+            <div class="col s12">
                 <div class="container" id="receiverForm">
                     <form class="col s12" id="edit-giver" data-id="{{id}}">
                         <div class="row">
@@ -14,38 +18,37 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="input-field col s12">
+                            <div class="input-field col s6">
                                 <input type="text" class="form-control" id="Email">
                                 <label for="Email" class="form-label">Email</label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary" id="Submit">Update</button>
-                        <button type="button" class="btn btn-primary" id="Back" onclick="backToList()">BACK TO
-                            LIST</button>
+                        <div class="row">
+                            <button type="submit" class="btn btn-primary green darken-4" id="Submit">Update</button>
+                            <button type="button" class="btn btn-primary green darken-4" id="Back"
+                                onclick="backToList()">BACK TO
+                                LIST</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="container" id="recieverData">
-            <div class="col s12" id="inputBackground">
-
+        <div class="row">
+            <div class="container" id="recieverData">
                 <table class="striped" class="responsive-table" class="highlight">
                     <thead id="listNames">
                         <tr>
-                            <th id="giverTableId">RECEIVER ID</th>
+                            {{!-- <th id="giverTableId">RECEIVER ID</th> --}}
                             <th id="giverTableName">RECEIVER</th>
                             <th id="giverTableAddress">ADDRESS</th>
                             <th id="giverTableGiftIdeas">WISH LIST</th>
                             <th id="giverTableGiftIdeas">GIVER NAME</th>
                             <th id="giverTableGiftIdeas">GIVER EMAIL</th>
-
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td id="giverId">{{id}}</td>
+                            {{!-- <td id="giverId">{{id}}</td> --}}
                             <td id="receiverFullName">{{Receiver}}</td>
                             <td id="giverAddress">
                                 {{Address}}
@@ -58,13 +61,15 @@
                             </td>
                             <td id="giverFullName">{{Giver}}</td>
                             <td id="giverEmail">{{Email}}</td>
-
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
-</div>
+
+
 
 <script type="text/javascript" src="/assets/js/updateGiver.js"></script>
 
