@@ -2,6 +2,7 @@
 html {
   overflow-y: scroll;
   overflow: auto;
+  
 }
 
 body {
@@ -25,6 +26,7 @@ body {
 #contact {
   font-family: "Playfair Display", serif;
   font-size: 20px;
+  overflow: auto;
 }
 
 /* homepage handlebar css */
@@ -46,12 +48,25 @@ body {
 
 #background {
   background-image: url("./images/christmas1.jpg");
-  position: fixed;
+  
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
-  overflow: auto;
+  
+  
+}
+
+
+#background1 {
+  background-image: url("./images/christmas1.jpg");
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  
+  
 }
 
 #recieverPage {
@@ -141,6 +156,7 @@ body {
 #contactUsInfo {
   margin-left: 11%;
   text-align: center;
+  overflow: auto;
 }
 
 #hollyJolly,
@@ -159,6 +175,8 @@ body {
   font-size: 60px;
   text-align: center;
   padding-top: 5%;
+  overflow: auto;
+  width: 100%
 }
 
 #contactName {

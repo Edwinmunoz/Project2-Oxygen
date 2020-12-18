@@ -9,7 +9,7 @@ const app = express();
 
 const receiverController = require("./controllers/receiverController");
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8181;
 
 // MIDDLEWARE
 // Handle POST body
