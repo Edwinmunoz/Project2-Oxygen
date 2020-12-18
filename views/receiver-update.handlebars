@@ -1,20 +1,13 @@
 {{> navbar}}
-<style>
-    #receiverListTitle {
-        font-family: "Elsie Swash Caps", cursive;
-        font-size: 60px;
-        text-align: center;
-        padding-bottom: 5%;
-    }
-</style>
+
 <div class="container" id="recieverPage">
-    <h1 id="receiverListTitle">RECEIVER UPDATE</h1>
+    <h1 id="receiverListTitle">Recipient Update</h1>
     <div class="row">
         <div class="col s6">
             <div class="row">
                 <div class="container" id="receiverForm">
-                   
-                        <form class="col s12" id="update-receiver" data-id="{{id}}">
+
+                    <form class="col s12" id="update-receiver" data-id="{{id}}">
                         <div class="row">
                             <div class="input-field col s6">
                                 <input id="receiverName" type="text" class="validate" />
@@ -46,36 +39,38 @@
 
                             <div class="card-action">
 
-                        <button type ="submit" class="waves-effect waves-light green darken-4 btn-large" id= "Submit" >Update</button>
-                        <button type ="button" class="waves-effect waves-light green darken-4 btn-large" id= "Back" onclick="backToList()" >BACK TO LIST</button>
+                                <button type="submit" class="waves-effect waves-light green darken-4 btn-large"
+                                    id="Submit">Update</button>
+                                <button type="button" class="waves-effect waves-light green darken-4 btn-large"
+                                    id="Back" onclick="backToList()">BACK TO LIST</button>
 
                             </div>
                         </div>
-                    </form> 
+                    </form>
                 </div>
-             </form>
+                </form>
             </div>
         </div>
 
-    <div class="container" id="recieverData">
-        <div class="col s6">
-            <form class="col s12" id="buttin" data-id="{{id}}">
-                <div class="row" id="inputBackground">
-                    <div class="col s12">
-                        <div class="card green darken-4">
-                            <div class="card-content white-text" id="receiverDataForm">
-                                <span class="card-title" id="dataName">{{Receiver}} </span>
-                                <p id="dataId">Receiver ID: {{id}}</p>
-                                <p id="dataAddress">Address: {{Address}}</p>
-                                <p id="dataGiftOne">Wish List 1: {{Gift1}}</p>
-                                <p id="dataGiftTwo">Wish List 2: {{Gift2}}</p>
-                                <p id="dataGiftThree">Wish List 3: {{Gift3}}</p>
+        <div class="container" id="recieverData">
+            <div class="col s6">
+                <form class="col s12" id="buttin" data-id="{{id}}">
+                    <div class="row" id="inputBackground">
+                        <div class="col s12">
+                            <div class="card green darken-4">
+                                <div class="card-content white-text" id="receiverDataForm">
+                                    <span class="card-title" id="dataName">{{Receiver}} </span>
+                                    {{!-- <p id="dataId">Receiver ID: {{id}}</p> --}}
+                                    <p id="dataAddress">Address: {{Address}}</p>
+                                    <p id="dataGiftOne">Wish List 1: {{Gift1}}</p>
+                                    <p id="dataGiftTwo">Wish List 2: {{Gift2}}</p>
+                                    <p id="dataGiftThree">Wish List 3: {{Gift3}}</p>
 
-                            </div>
-            </form>
+                                </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 </div>
 </div>
 </div>
