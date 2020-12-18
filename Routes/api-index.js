@@ -27,14 +27,14 @@ module.exports = function (app) {
   });
 
   app.get("/giver", function (req, res) {
-    res.sendFile(path.join(__dirname, "./views/giver.handlebars"));
+    res.json(path.join(__dirname, "./views/giver.handlebars"));
   });
 
   app.get("/new", function (req, res) {
-    res.sendFile(path.join(__dirname, "./views/receiver.handlebars"));
+    res.json(path.join(__dirname, "./views/receiver.handlebars"));
   });
 
   app.get("/aboutus", function (req, res) {
-    res.sendFile(path.join(__dirname, "./views/aboutus.handlebars"));
+    res.json(path.join(__dirname, "./views/aboutus.handlebars"));
   });
 };
