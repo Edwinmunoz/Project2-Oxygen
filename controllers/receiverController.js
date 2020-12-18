@@ -32,15 +32,6 @@ router.post("/api/receiver", (req, res) => {
     });
 });
 
-// when About us is pressed on Nav bar then it will direct to aboutus.handlerbars
-router.get("/aboutus", (req, res) => {
-  res.render("aboutus");
-});
-
-router.get("/contactus", (req, res) => {
-  res.render("contact");
-});
-
 //this will find the record Giver want to add giver information
 //this will use id parames from updateGiver.js submit click
 //this will use giver-update handlebar
@@ -89,6 +80,21 @@ router.get("/receiver/:id", (req, res) => {
   });
 });
 
+// This will update the Giver name and Email
+router.put("/api/giver/:id", (req, res) => {
+  db.Gift.update(req.body, {
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((updateGiver) => {
+      res.json(updateGiver);
+      console.log(updateGiver);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 // this is when new receiver is submitted then it will retreive data from the body and entered to our database
 // router.get("/api/receivers", function(req, res) {
 //   db.Gift.findAll({
@@ -98,18 +104,21 @@ router.get("/receiver/:id", (req, res) => {
 //   });
 // });
 
-router.post("/api/receivers", (req, res) => {
-  db.Gift.create(req.body)
-    .then((newReceiver) => {
-      console.log(newReceiver);
-      res.json(newReceiver);
+//this will update the receiver name, address, gift1, gift2, gift3
+router.put("/api/receiver/:id", (req, res) => {
+  db.Gift.update(req.body, {
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((updateReceiver) => {
+      res.json(updateReceiver);
+      console.log(updateReceiver);
     })
     .catch((err) => {
       console.log(err);
     });
 });
-
-router.get("/api/receivers", function (req, res) {});
 
 router.delete("api/receivers/:id", function (req, res) {
   db.gifts_list
@@ -118,14 +127,6 @@ router.delete("api/receivers/:id", function (req, res) {
       res.json(dbGift);
     });
 });
-
-// router.put("api/updateReciever/:id", function (req, res) {
-//   console.log(req.body)
-//   db.giftsList.update(req.body, { where: { id: req.params.id }})
-//   .then(function (updateReciever) {
-//       res.json(updateReciever);
-//   })
-// });
 
 //-------------------------------------------------------------------
 // this will delete record from database when Delect button is clicked from /new
@@ -143,6 +144,19 @@ router.delete("/api/receiver/:id", (req, res) => {
       console.log(err);
     });
 });
+
+router.post("/api/receivers", (req, res) => {
+  db.Gift.create(req.body)
+    .then((newReceiver) => {
+      console.log(newReceiver);
+      res.json(newReceiver);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+router.get("/api/receivers", function (req, res) {});
 
 //---------------------------------------------------------------------
 // 2) This will show all data and sorted by Id - lates will post to top
