@@ -1,27 +1,35 @@
 $(document).ready(function () {
-    $("#receiverUpdateButton").on("submit", function (e) {
-        e.preventDefault();
-        const id = $(this).data("id");
-      
-        const receiverName = $("#receiverName").val();
-        const address = $("#address").val();
-        const gift1 = $("#receiverGiftOne").val();
-        const gift2 = $("receiverGiftTwo").val();
-        const gift3 = $("#receiverGiftThree").val();
-
-        $.ajax({
-            method: "PUT",
-            url: `/api/receivers/${id}`,
-            data: {
+    $("#update-receiver").on("submit", function (e) {
+      e.preventDefault();
+      const id = $(this).data("id");
+      const receiver = $("#receiverName").val();
+      const address = $("#receiverAddress").val();
+      const gift1 = $("#receiverGiftOne").val();
+      const gift2 = $("#receiverGiftTwo").val();
+      const gift3 =  $("#receiverGiftThree").val();
+  
+      console.log(receiver);
+      console.log(address);
+    
+    
+  
+    
+  
+      $.ajax({
+        method: "PUT",
+        url: `/api/receiver/${id}`,
+        data: { 
+          Receiver: receiver,
+          Address: address,
+          Gift1: gift1,
+          Gift2: gift2,
+          Gift3: gift3,
+        },
+      }).then((response) => {
+        window.location.reload();
         
-                receiverName,
-                address,
-                gift1,
-                gift2,
-                gift3
-            },
-        }).then((response) => {
-            window.location.replace("/receiver");
-        });
+      });
     });
-});
+  });
+  
+  

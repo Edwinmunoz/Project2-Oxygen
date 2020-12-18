@@ -14,7 +14,7 @@ router.get("/list", function (req, res) {
     },
     order: [["id", "desc"]],
   }).then(function (results) {
-    res.render("giver-list", { gifts: results });
+    res.render("giver", { gifts: results });
   });
 });
 //--------------------------------------------------------------
@@ -41,8 +41,52 @@ router.get("/contactus", (req, res) => {
   res.render("contact");
 });
 
-router.get("/giver", (req, res) => {
-  res.render("giver");
+//this will find the record Giver want to add giver information
+//this will use id parames from updateGiver.js submit click
+//this will use giver-update handlebar
+router.get("/giver/:id", (req, res) => {
+  db.Gift.findOne({
+    where: {
+      id: req.params.id,
+    },
+  }).then((foundReceiver) => {
+    console.log(foundReceiver.email);
+    res.render("giver-update", {
+      Email: foundReceiver.Email,
+      Receiver: foundReceiver.Receiver,
+      Giver: foundReceiver.Giver,
+      Address: foundReceiver.Address,
+      Gift1: foundReceiver.Gift1,
+      Gift2: foundReceiver.Gift2,
+      Gift3: foundReceiver.Gift3,
+      id: foundReceiver.id,
+      Story: foundReceiver.Story,
+    });
+  });
+});
+//------------------------------------------------------------------
+//this will find the record user want to update receiver info
+//this will use id parames from updateReceiver.js submit click
+//this will use receiver-update handlebar
+router.get("/receiver/:id", (req, res) => {
+  db.Gift.findOne({
+    where: {
+      id: req.params.id,
+    },
+  }).then((foundReceiver) => {
+    console.log(foundReceiver.email);
+    res.render("receiver-update", {
+      Email: foundReceiver.Email,
+      Receiver: foundReceiver.Receiver,
+      Giver: foundReceiver.Giver,
+      Address: foundReceiver.Address,
+      Gift1: foundReceiver.Gift1,
+      Gift2: foundReceiver.Gift2,
+      Gift3: foundReceiver.Gift3,
+      id: foundReceiver.id,
+      Story: foundReceiver.Story,
+    });
+  });
 });
 
 // this is when new receiver is submitted then it will retreive data from the body and entered to our database
@@ -84,25 +128,6 @@ router.delete("api/receivers/:id", function (req, res) {
 // });
 
 //-------------------------------------------------------------------
-
-//this will delete record from databsae when Delect button is clicked from /list
-
-router.delete("/api/giver/:id", (req, res) => {
-  db.Gift.destroy({
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then((response) => {
-      console.log(response);
-      res.json(response);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
-//-------------------------------------------------------------------
 // this will delete record from database when Delect button is clicked from /new
 router.delete("/api/receiver/:id", (req, res) => {
   db.Gift.destroy({
@@ -129,5 +154,17 @@ router.get("/new", (req, res) => {
     res.render("receiver", { gifts: results });
   });
 });
+
+//-------------------------------------------------------------------------
+// this will direct to about us handlebar when about us is clicked on nav bar
+router.get("/aboutus", (req, res) => {
+  res.render("aboutus");
+});
+// this will direct to contact handlebar when about us is clicked on nav bar
+router.get("/contactus", (req, res) => {
+  res.render("contact");
+});
+
+//-------------------------------------------------------------------------
 
 module.exports = router;

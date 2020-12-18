@@ -1,73 +1,99 @@
-
 {{> navbar}}
+{{!-- <style>
+    #receiverListTitle {
+        font-family: "Elsie Swash Caps", cursive;
+        font-size: 60px;
+        text-align: center;
+        padding-bottom: 5%;
+    }
+</style> --}}
 <div class="container" id="recieverPage">
+    <h1 id="receiverListTitle">RECEIVER LIST</h1>
     <div class="row">
         <div class="col s6">
-            <div class="row">
-                <div class="container" id="receiverForm">
-                    <form class="col s12" id="new-receiver">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="receiverName" type="text" class="validate" />
-                                <label for="giverAddress">Full Name</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="receiverAddress" type="text" class="validate" />
-                                <label for="giverAddress">Address</label>
-                            </div>
+            <div class="container" id="receiverForm">
+                <form class="col s12" id="new-receiver">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="receiverName" type="text" class="validate" />
+                            <label for="giverAddress">Full Name</label>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="receiverGiftOne" type="text" class="GiftOne" />
-                                <label>Gift 1</label>
-                            </div>
+                        <div class="input-field col s6">
+                            <input id="receiverAddress" type="text" class="validate" />
+                            <label for="giverAddress">Address</label>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="receiverGiftTwo" type="text" class="GiftOne" />
-                                <label>Gift 2</label>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="row">
                         <div class="input-field col s12">
-                            <input id="receiverGiftThree" type="text" class="GiftOne" />
-                            <label>Gift 3</label>
+                            <input id="receiverGiftOne" type="text" class="GiftOne" />
+                            <label>Gift 1</label>
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="receiverGiftTwo" type="text" class="GiftOne" />
+                            <label>Gift 2</label>
+                        </div>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="receiverGiftThree" type="text" class="GiftOne" />
+                        <label>Gift 3</label>
+                    </div>
+                    <div>
                         <button class="waves-effect waves-light green darken-4 btn-large"
                             id="receiverButton">Submit</button>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="container" id="recieverData">
-            <div class="col s6">
+        <div class="col s6">
+            <div class="container" id="recieverData">
                 {{#each gifts}}
-                <form class="col s12" id="deletebutton"data-id="{{id}}"></form>
-                <div class="row" id="inputBackground">
-                    <div class="col s12">
-                        <div class="card green darken-4">
-                            <div class="card-content white-text" id="receiverDataForm">
-                                <span class="card-title" id="dataName">Name {{Receiver}} </span>
-                                <p id="dataAddress">Address: {{Address}}</p>
-                                <p id="dataGiftOne">Gift 1 {{Gift1}}</p>
-                                <p id="dataGiftTwo">Gift 2 {{Gift2}}</p>
-                                <p id="dataGiftThree">Gift 3 {{Gift3}}</p>
-                            </div>
-                            <div class="row">
-                                <div class="card-action" id="inputReceiver">
-                                   <button type="submit" class="btn btn-primary" id="editReceiver" data-id="{{id}}">EDIT</button>
-                                   <button class="btn btn-primary"  data-id="{{id}}">DELETE</button>
-    
+                <form class="col s12" id="buttin" data-id="{{id}}">
+                    <div class="row" id="inputBackground">
+                        <div class="col s12">
+                            <div class="card green darken-4">
+                                <div class="card-content white-text" id="receiverDataForm">
+                                    <span class="card-title" id="dataName">{{Receiver}} </span>
+                                    <p id="dataId">Receiver ID: {{id}}</p>
+                                    <p id="dataAddress">Address: {{Address}}</p>
+                                    <p id="dataGiftOne">Wish List 1: {{Gift1}}</p>
+                                    <p id="dataGiftTwo">Wish List 2: {{Gift2}}</p>
+                                    <p id="dataGiftThree">Wish List 3: {{Gift3}}</p>
+                                    <hr style="width:100%;text-align:left;margin-left:0">
+                                    <p id="Giver">GIVER NAME: {{Giver}}</p>
+                                    <p id="Giver">EMAIL: {{Email}}</p>
+                                </div>
+                                <div class="row">
+                                    <div class="card-action" id="inputReceiver">
+                                        <a href="/receiver/{{id}}">
+                                            <button type="button" class="btn btn-primary red darken-4" id="editReceiver"
+                                                data-id="{{id}}">EDIT</button>
+                                        </a>
+                                        <button class="btn btn-primary red darken-4" id="deletebutton"
+                                            data-id="{{id}}">DELETE</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="row">
+                        {{/each}}
+                    </div>
                 </form>
-                {{/each}}
             </div>
         </div>
     </div>
 </div>
-</div>
 
+{{!-- These pages calling the Public JS Files to correctly route API Calls--}}
 <script type="text/javascript" src="/assets/js/newReciever.js"></script>
+<script type="text/javascript" src="/assets/js/deleteRecord.js"></script>
+<script type="text/javascript" src="/assets/js/updateReciever.js"></script>
+
+{{!-- This fucntion will take use to Home when back to main button is clicked --}}
+<script>
+    function backHome() {
+        window.location.replace("/")
+    }
+</script>
