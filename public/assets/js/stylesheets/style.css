@@ -48,12 +48,12 @@ body {
 
 #background {
   background-image: url("./images/christmas1.jpg");
-  position: fixed;
+  
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
-  overflow: auto;
+  
   
 }
 
