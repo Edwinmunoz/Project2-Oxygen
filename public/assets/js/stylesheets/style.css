@@ -5,8 +5,6 @@ html {
   
 }
 
-
-
 body {
   background-image: url("/assets/js/images/christmas1.jpg");
   position: fixed;
@@ -56,6 +54,7 @@ body {
   height: 100%;
   width: 100%;
   overflow: auto;
+<<<<<<< HEAD
   
 }
 
@@ -69,6 +68,8 @@ body {
   width: 100%;
   
   
+=======
+>>>>>>> 947a162a2ea5e713a387920ec5f8dcdd243e1ae8
 }
 
 #recieverPage {
@@ -144,6 +145,7 @@ body {
 /* about Us handlebar info */
 
 #aboutUsInfo {
+  text-align-last: center;
   margin-top: -5%;
   background: white;
   opacity: 0.7;
