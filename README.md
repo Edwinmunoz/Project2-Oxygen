@@ -16,15 +16,15 @@ Using full CRUD, we create our database by using ajax to target specific id elem
 
 ### -Navigation
 
-![Navigation Demonstration](public\assets\js\images\navigate.gif)
+![Navigation Demonstration](navigate.gif)
 
 ### -Creating a Receiver
 
-![Creating Receiver Demonstration](public\assets\js\images\receive.gif)
+![Creating Receiver Demonstration](receive.gif)
 
 ### -Updating Giver and editing/deleting Receiver
 
-![Giver/editing/deleting Demonstration](public\assets\js\images\give.gif)
+![Giver/editing/deleting Demonstration](give.gif)
 
 ## Technologies Used:
 
