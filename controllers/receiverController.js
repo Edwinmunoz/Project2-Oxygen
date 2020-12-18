@@ -6,22 +6,18 @@ const db = require("../models");
 //------------------------------------------------------------------
 // list of all records that does not have Giver, this will use giver-list handlebar
 // this will handle Delect and Edit function from Giver
-router.get("/list", function(req, res) {
-
+router.get("/list", function (req, res) {
   db.Gift.findAll({
     //This will filed all data without Giver Name
     where: {
       Giver: null,
     },
-    order: [["id", "desc"]]
-
-  }).then(function(results) {
-    res.render("giver",{gifts: results})
+    order: [["id", "desc"]],
+  }).then(function (results) {
+    res.render("giver", { gifts: results });
   });
-
 });
 //--------------------------------------------------------------
-
 
 // 1) post the new receiver created and intertit to the database
 router.post("/api/receiver", (req, res) => {
@@ -29,19 +25,15 @@ router.post("/api/receiver", (req, res) => {
     .then((newReceiver) => {
       console.log(newReceiver);
       res.json(newReceiver);
-      console.log(newReceiver.id)
-      
+      console.log(newReceiver.id);
     })
     .catch((err) => {
       console.log(err);
     });
 });
 
-
-//-------------------------------------------------------------------------
-
 //this will find the record Giver want to add giver information
-//this will use id parames from updateGiver.js submit click 
+//this will use id parames from updateGiver.js submit click
 //this will use giver-update handlebar
 router.get("/giver/:id", (req, res) => {
   db.Gift.findOne({
@@ -65,7 +57,7 @@ router.get("/giver/:id", (req, res) => {
 });
 //------------------------------------------------------------------
 //this will find the record user want to update receiver info
-//this will use id parames from updateReceiver.js submit click 
+//this will use id parames from updateReceiver.js submit click
 //this will use receiver-update handlebar
 router.get("/receiver/:id", (req, res) => {
   db.Gift.findOne({
@@ -87,10 +79,8 @@ router.get("/receiver/:id", (req, res) => {
     });
   });
 });
-//------------------------------------------------------------------
 
-// This will update the Giver name and Email 
-
+// This will update the Giver name and Email
 router.put("/api/giver/:id", (req, res) => {
   db.Gift.update(req.body, {
     where: {
@@ -99,14 +89,21 @@ router.put("/api/giver/:id", (req, res) => {
   })
     .then((updateGiver) => {
       res.json(updateGiver);
-      console.log(updateGiver)
+      console.log(updateGiver);
     })
     .catch((err) => {
       console.log(err);
     });
 });
+// this is when new receiver is submitted then it will retreive data from the body and entered to our database
+// router.get("/api/receivers", function(req, res) {
+//   db.Gift.findAll({
+//     include: [db.Post]
+//   }).then(function(newReceiver) {
+//     res.json(newReceiver);
+//   });
+// });
 
-//-------------------------------------------------------------------
 //this will update the receiver name, address, gift1, gift2, gift3
 router.put("/api/receiver/:id", (req, res) => {
   db.Gift.update(req.body, {
@@ -116,13 +113,20 @@ router.put("/api/receiver/:id", (req, res) => {
   })
     .then((updateReceiver) => {
       res.json(updateReceiver);
-      console.log(updateReceiver)
+      console.log(updateReceiver);
     })
     .catch((err) => {
       console.log(err);
     });
 });
 
+router.delete("api/receivers/:id", function (req, res) {
+  db.gifts_list
+    .destroy({ where: { id: req.params.id } })
+    .then(function (dbGift) {
+      res.json(dbGift);
+    });
+});
 
 //-------------------------------------------------------------------
 // this will delete record from database when Delect button is clicked from /new
@@ -141,20 +145,29 @@ router.delete("/api/receiver/:id", (req, res) => {
     });
 });
 
+router.post("/api/receivers", (req, res) => {
+  db.Gift.create(req.body)
+    .then((newReceiver) => {
+      console.log(newReceiver);
+      res.json(newReceiver);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
+router.get("/api/receivers", function (req, res) {});
 
 //---------------------------------------------------------------------
-// 2) This will show all data and sorted by Id - lates will post to top 
+// 2) This will show all data and sorted by Id - lates will post to top
 
 router.get("/new", (req, res) => {
   db.Gift.findAll({
-    order: [["id", "desc"]]
-  })
-    .then(function(results) {
-    res.render("receiver",{gifts: results})
-  })
+    order: [["id", "desc"]],
+  }).then(function (results) {
+    res.render("receiver", { gifts: results });
+  });
 });
-
 
 //-------------------------------------------------------------------------
 // this will direct to about us handlebar when about us is clicked on nav bar
@@ -169,5 +182,3 @@ router.get("/contactus", (req, res) => {
 //-------------------------------------------------------------------------
 
 module.exports = router;
-
-

@@ -1,8 +1,4 @@
-# Project2-Oxygen
-
-## App Name: 
-
-The Holly Jolly Generator
+# The Holly Jolly Generator
 
 ## Initial setup for local usage (installing npm packages):
 
@@ -10,7 +6,7 @@ In config folder, under config.json, replace username and password with your own
 
 ## Motivation:
 
-Our motivation for creating the Holly Jolly Generator is to spread holiday cheer and joy in our communities during these difficult times, by creating an app that allows people to give gifts to less forutunate members of our communities, while saving time & phyiscal resources. 
+Our motivation for creating the Holly Jolly Generator is to spread holiday cheer and joy in our communities during these difficult times, by creating an app that allows people to give gifts to less forutunate members of our communities, while saving time & physical resources. 
 
 ## Method:
 
@@ -38,7 +34,9 @@ MYSQL for databasing
 
 Handlebars for our html
 
-CSS for stylizing elements of handlebars
+Materialize CSS for stylizing elements of handlebars
+
+Lint for formatting purposes 
 
 ## Contributors and github profiles:
 
