@@ -1,4 +1,8 @@
 /* main handlebar css */
+html {
+  overflow-y: scroll;
+  overflow: auto;
+}
 
 body {
   background-image: url("/assets/js/images/christmas1.jpg");
