@@ -10,19 +10,19 @@ Our motivation for creating the Holly Jolly Generator is to spread holiday cheer
 
 ## Method:
 
-Using full CRUD, we create our database by using ajax to target specific id elements within our handlebars and then in turn read it into our app, update our givers and recievers portion of our database using ajax to target on submit/click functions, and delete portions of our database when certain criterions are met. 
+Using full CRUD, we create our database by using ajax to target specific id elements within our handlebars and then in turn read it into our app, update our givers and receivers portion of our database using ajax to target on submit/click functions, and delete portions of our database when certain criterions are met. 
 
 ## Demonstration:
 
 ### -Navigation
 
-![Navigation Demonstration](public\assets\js\images\navige.gif)
+![Navigation Demonstration](public\assets\js\images\navigate.gif)
 
 ### -Creating a Receiver
 
-![Creating Reciever Demonstration](public\assets\js\images\receive.gif)
+![Creating Receiver Demonstration](public\assets\js\images\receive.gif)
 
-### -Updating Giver and editing/deleting Reciever
+### -Updating Giver and editing/deleting Receiver
 
 ![Giver/editing/deleting Demonstration](public\assets\js\images\give.gif)
 
