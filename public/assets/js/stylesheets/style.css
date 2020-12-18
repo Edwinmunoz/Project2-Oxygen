@@ -73,7 +73,7 @@ body {
 }
 
 #receiverData {
-  margin-bottom: 15%;
+  margin-bottom: 25%;
 }
 
 #receiverForm {
@@ -107,6 +107,7 @@ body {
   font-size: 60px;
   text-align: center;
   padding-bottom: 5%;
+  text-align: center;
 }
 
 /* giver handlebar css */
