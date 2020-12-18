@@ -1,13 +1,5 @@
 {{> navbar}}
-<style>
-    #giverListTitle{
-  font-family: "Elsie Swash Caps", cursive;
-  font-size: 60px;
-  text-align: center;
-  padding-bottom: 5%;
-}
-</style>
-<h1 id= "giverListTitle"> CHOOSE YOUR RECEIVER </h1>
+<h1 id="giverListTitle"> Choose Your Recipient </h1>
 
 <div class="container" id="giverTable">
     <div class="row">
@@ -18,20 +10,20 @@
             <div class="row">
                 {{#each gifts}}
                 <table class="striped" class="responsive-table" class="highlight">
-                 
+
                     <thead id="listNames">
                         <tr>
-                            <th id="giverTableName">RECEIVER ID</th>
-                            <th id="giverTableName">RECEIVER</th>
-                            <th id="giverTableAddress">ADDRESS</th>
-                            <th id="giverTableGiftIdeas">WISH LISTS</th>
-            
+                            {{!-- <th id="giverTableName">RECEIVER ID</th> --}}
+                            <th id="giverTableName">RECEIVER:</th>
+                            <th id="giverTableAddress">ADDRESS:</th>
+                            <th id="giverTableGiftIdeas">WISH LISTS:</th>
+
 
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td id="receiverId">{{id}}</td>
+                            {{!-- <td id="receiverId">{{id}}</td> --}}
                             <td id="receiverFullName">{{Receiver}}</td>
                             <td id="receiverAddress">
                                 {{Address}}
@@ -42,32 +34,32 @@
                                 {{Gift3}}
 
                             </td>
-                             <td id="receiverStory">{{Story}}</td>
-                            
+                            <td id="receiverStory">{{Story}}</td>
+
                             <td id="giverInput">
-                            
+
                                 <div class="container" id="giverInputTable">
-                                     <form class="col s12" id="edit-giver" data-id="{{id}}"></form>
-                                   
-        
-                                            <a href="/giver/{{id}}">
-                                                <button class="btn btn-secondary">BE A GIVER</button></a>
-                                           </form>
-                                        </div>
-                                    </div>
+                                    <form class="col s12" id="edit-giver" data-id="{{id}}"></form>
+
+
+                                    <a href="/giver/{{id}}">
+                                        <button class="btn btn-secondary green darken-4">BE A GIVER</button></a>
+                                    </form>
                                 </div>
-            
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                 {{/each}}
-            </div>
-            <div class="col s2">
-                <p></p>
             </div>
         </div>
+
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        {{/each}}
     </div>
+    <div class="col s2">
+        <p></p>
+    </div>
+</div>
+</div>
 
 </div>
 

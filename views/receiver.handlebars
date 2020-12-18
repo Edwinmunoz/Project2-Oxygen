@@ -1,14 +1,6 @@
 {{> navbar}}
-{{!-- <style>
-    #receiverListTitle {
-        font-family: "Elsie Swash Caps", cursive;
-        font-size: 60px;
-        text-align: center;
-        padding-bottom: 5%;
-    }
-</style> --}}
 <div class="container" id="recieverPage">
-    <h1 id="receiverListTitle">RECEIVER LIST</h1>
+    <h1 id="receiverListTitle">Recipient List</h1>
     <div class="row">
         <div class="col s6">
             <div class="container" id="receiverForm">
@@ -55,14 +47,14 @@
                             <div class="card green darken-4">
                                 <div class="card-content white-text" id="receiverDataForm">
                                     <span class="card-title" id="dataName">{{Receiver}} </span>
-                                    <p id="dataId">Receiver ID: {{id}}</p>
+                                    {{!-- <p id="dataId">Receiver ID: {{id}}</p> --}}
                                     <p id="dataAddress">Address: {{Address}}</p>
                                     <p id="dataGiftOne">Wish List 1: {{Gift1}}</p>
                                     <p id="dataGiftTwo">Wish List 2: {{Gift2}}</p>
                                     <p id="dataGiftThree">Wish List 3: {{Gift3}}</p>
                                     <hr style="width:100%;text-align:left;margin-left:0">
-                                    <p id="Giver">GIVER NAME: {{Giver}}</p>
-                                    <p id="Giver">EMAIL: {{Email}}</p>
+                                    {{!-- <p id="Giver">GIVER NAME: {{Giver}}</p>
+                                    <p id="Giver">EMAIL: {{Email}}</p> --}}
                                 </div>
                                 <div class="row">
                                     <div class="card-action" id="inputReceiver">
