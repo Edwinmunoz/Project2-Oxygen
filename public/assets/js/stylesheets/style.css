@@ -4,10 +4,6 @@ html {
   overflow: auto;
 }
 
-html {
-  overflow: auto;
-}
-
 body {
   background-image: url("/assets/js/images/christmas1.jpg");
   position: fixed;
@@ -55,7 +51,7 @@ body {
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
-  overflow-y: scroll;
+  overflow: auto;
 }
 
 #recieverPage {
@@ -131,6 +127,7 @@ body {
 /* about Us handlebar info */
 
 #aboutUsInfo {
+  text-align-last: center;
   margin-top: -5%;
   background: white;
   opacity: 0.7;
